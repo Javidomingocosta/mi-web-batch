@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Juego — Batch Nebula</title>
+  <link rel="icon" href="assets/robot/iconastrobot.png" type="image/png">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <canvas id="universe" aria-hidden="true"></canvas>
+  <div class="backdrop" aria-hidden="true"></div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <div class="logo">
+          <img src="assets/robot/iconastrobot.png" alt="AstroBot" />
+        </div>
+        <span>Cosmos Informático</span>
+      </a>
+      <nav class="navlinks">
+        <a href="so.html">¿Qué es un SO?</a>
+        <a href="msdos.html">Historia MS-DOS</a>
+        <a href="curso-batch.html">Curso Batch</a>
+        <a href="descargas.html">Descargas</a>
+        <a href="juego.html">Juego</a>
+        <a href="certificado.html">Reto & Certificado</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Mini-juego en Batch: <span style="text-shadow:0 0 24px rgba(255,120,220,.18)">La Ruta de la Galaxia</span></h1>
+      <p class="lead">
+        Un juego corto para practicar: menús, variables, IF/ELSE y saltos con GOTO. Descárgalo y ábrelo para ver cómo está hecho.
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="assets/downloads/juego-galaxia.bat" download>Descargar juego</a>
+        <a class="btn" href="curso-batch.html#modulo-menus">Repasar menús</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Cómo ampliarlo en equipo</h2>
+      <p>
+        Reparto típico: una persona diseña la historia (rutas), otra implementa menús/variables, otra pule textos y pruebas.
+        Objetivo: que cada elección tenga consecuencias claras y que el juego se pueda rejugar.
+      </p>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> Cosmos Informático</div>
+    </footer>
+  </main>
+
+  <script src="js/universe.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

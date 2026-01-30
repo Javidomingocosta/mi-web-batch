@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Descargas — Batch Nebula</title>
+  <link rel="icon" href="assets/robot/iconastrobot.png" type="image/png">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <canvas id="universe" aria-hidden="true"></canvas>
+  <div class="backdrop" aria-hidden="true"></div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <div class="logo">
+          <img src="assets/robot/iconastrobot.png" alt="AstroBot" />
+        </div>
+        <span>Cosmos Informático</span>
+      </a>
+      <nav class="navlinks">
+        <a href="so.html">¿Qué es un SO?</a>
+        <a href="msdos.html">Historia MS-DOS</a>
+        <a href="curso-batch.html">Curso Batch</a>
+        <a href="descargas.html">Descargas</a>
+        <a href="juego.html">Juego</a>
+        <a href="certificado.html">Reto & Certificado</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Programas en Batch</h1>
+      <p class="lead">
+        Aquí están los .BAT principales del proyecto. Son base escolar: seguros, claros y fáciles de ampliar.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Listado</h2>
+      <table class="table" aria-label="Descargas">
+        <thead>
+          <tr>
+            <th>Archivo</th>
+            <th>Qué hace</th>
+            <th>Descarga</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Mantenimiento PC</b><br><span class="badge">mantenimiento-pc.bat</span></td>
+            <td>Limpieza ligera (temporales del usuario), info del sistema y comprobaciones básicas.</td>
+            <td><a class="btn primary" href="assets/downloads/mantenimiento-pc.bat" download>Descargar</a></td>
+          </tr>
+          <tr>
+            <td><b>Juego</b><br><span class="badge">juego-galaxia.bat</span></td>
+            <td>Aventura corta tipo “elige tu ruta”. Ideal para practicar variables + IF + menús.</td>
+            <td><a class="btn primary" href="assets/downloads/juego-galaxia.bat" download>Descargar</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="small" style="margin-top:12px">
+        Consejo: ejecuta los .BAT con doble click o desde cmd. Si Windows avisa, revisa el código (es normal en scripts).
+      </p>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> Cosmos Informático</div>
+    </footer>
+  </main>
+
+  <script src="js/universe.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

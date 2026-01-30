@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Historia de MS-DOS — Batch Nebula</title>
+  <link rel="icon" href="assets/robot/iconastrobot.png" type="image/png">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <canvas id="universe" aria-hidden="true"></canvas>
+  <div class="backdrop" aria-hidden="true"></div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <div class="logo">
+          <img src="assets/robot/iconastrobot.png" alt="AstroBot" />
+        </div>
+        <span>Cosmos Informático</span>
+      </a>
+      <nav class="navlinks">
+        <a href="so.html">¿Qué es un SO?</a>
+        <a href="msdos.html">Historia MS-DOS</a>
+        <a href="curso-batch.html">Curso Batch</a>
+        <a href="descargas.html">Descargas</a>
+        <a href="juego.html">Juego</a>
+        <a href="certificado.html">Reto & Certificado</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>¿De dónde viene <span style="text-shadow:0 0 24px rgba(255,120,220,.18)">MS-DOS</span>?</h1>
+      <p class="lead">
+        MS-DOS fue un sistema operativo de línea de comandos muy influyente en los PCs. Batch (archivos .BAT) nace aquí:
+        automatizar tareas escribiendo comandos en un guion.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Timeline visual</h2>
+      <p>Versión resumida (perfecta para una web escolar). Puedes ampliarla con imágenes y fuentes si tu profe lo pide.</p>
+
+      <div class="timeline">
+        <div class="t-item">
+          <div class="date">Finales 70 · Ecosistema CP/M</div>
+          <h3>La era previa</h3>
+          <p>Muchos microordenadores usaban sistemas tipo CP/M. La idea: comandos + archivos + utilidades.</p>
+        </div>
+
+        <div class="t-item">
+          <div class="date">1981 · Nace el PC</div>
+          <h3>Un SO para el IBM PC</h3>
+          <p>El PC populariza el concepto “ordenador personal” y necesita un sistema operativo práctico y rápido.</p>
+        </div>
+
+        <div class="t-item">
+          <div class="date">Años 80 · MS-DOS se expande</div>
+          <h3>Comandos, rutas y scripts</h3>
+          <p>Se consolida el uso de comandos (DIR, CD, COPY…) y los archivos .BAT para automatizar flujos.</p>
+          <pre><code>@echo off
+echo Hola desde MS-DOS / cmd
+pause</code></pre>
+        </div>
+
+        <div class="t-item">
+          <div class="date">Años 90 · GUI + compatibilidad</div>
+          <h3>Windows y la herencia DOS</h3>
+          <p>Windows se hace masivo. Durante años convive con DOS y mantiene compatibilidad con scripts.</p>
+        </div>
+
+        <div class="t-item">
+          <div class="date">Hoy</div>
+          <h3>Batch sigue vivo</h3>
+          <p>En Windows moderno aún existe cmd.exe: Batch es útil para mantenimiento, automatización rápida y aprendizaje.</p>
+        </div>
+      </div>
+
+      <div class="actions" style="margin-top:14px">
+        <a class="btn primary" href="curso-batch.html">Ir al mini-curso de Batch</a>
+        <a class="btn" href="so.html">Volver a “¿Qué es un SO?”</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> Cosmos Informático</div>
+    </footer>
+  </main>
+
+  <script src="js/universe.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

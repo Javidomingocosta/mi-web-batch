@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Curso Batch — Batch Nebula</title>
+  <link rel="icon" href="assets/robot/iconastrobot.png" type="image/png">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <canvas id="universe" aria-hidden="true"></canvas>
+  <div class="backdrop" aria-hidden="true"></div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <div class="logo">
+          <img src="assets/robot/iconastrobot.png" alt="AstroBot" />
+        </div>
+        <span>Cosmos Informático</span>
+      </a>
+      <nav class="navlinks">
+        <a href="so.html">¿Qué es un SO?</a>
+        <a href="msdos.html">Historia MS-DOS</a>
+        <a href="curso-batch.html">Curso Batch</a>
+        <a href="descargas.html">Descargas</a>
+        <a href="juego.html">Juego</a>
+        <a href="certificado.html">Reto & Certificado</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Curso de <span style="text-shadow:0 0 24px rgba(140,180,255,.18)">Batch</span> </h1>
+      <p class="lead">
+        Este curso está diseñado para que puedas añadir más módulos o incluso otro curso completo después.
+        Cada módulo trae explicación corta + ejemplo + descarga.
+      </p>
+    </section>
+
+    <section class="section" id="modulo-hola">
+      <h2>Módulo 1 — Hola Mundo y estructura</h2>
+      <p>Conceptos: <span class="badge">@echo off</span> <span class="badge">echo</span> <span
+          class="badge">pause</span></p>
+      <pre><code>@echo off
+title Batch Nebula - Hola Mundo
+echo Hola, universo.
+pause</code></pre>
+      <div class="actions">
+        <a class="btn primary" href="assets/batch/01-hola-mundo.bat" download>Descargar ejemplo</a>
+      </div>
+    </section>
+
+    <section class="section" id="modulo-variables">
+      <h2>Módulo 2 — Variables</h2>
+      <p>Conceptos: <span class="badge">set</span> <span class="badge">%variable%</span> <span class="badge">set
+          /p</span></p>
+      <pre><code>@echo off
+set /p nombre=Como te llamas? 
+echo Encantado, %nombre%.
+pause</code></pre>
+      <div class="actions">
+        <a class="btn primary" href="assets/batch/02-variables.bat" download>Descargar ejemplo</a>
+      </div>
+    </section>
+
+    <section class="section" id="modulo-if">
+      <h2>Módulo 3 — Condiciones (IF)</h2>
+      <p>Conceptos: <span class="badge">if</span> <span class="badge">if exist</span> <span
+          class="badge">comparaciones</span></p>
+      <pre><code>@echo off
+set archivo=readme.txt
+if exist "%archivo%" (
+  echo Encontrado: %archivo%
+) else (
+  echo No existe: %archivo%
+)
+pause</code></pre>
+      <div class="actions">
+        <a class="btn primary" href="assets/batch/03-if.bat" download>Descargar ejemplo</a>
+      </div>
+    </section>
+
+    <section class="section" id="modulo-bucles">
+      <h2>Módulo 4 — Bucles (FOR)</h2>
+      <p>Conceptos: <span class="badge">for</span> <span class="badge">%%i</span> <span class="badge">do</span></p>
+      <pre><code>@echo off
+echo Listando .txt en la carpeta actual:
+for %%i in (*.txt) do echo - %%i
+pause</code></pre>
+      <div class="actions">
+        <a class="btn primary" href="assets/batch/04-bucles.bat" download>Descargar ejemplo</a>
+      </div>
+    </section>
+
+    <section class="section" id="modulo-menus">
+      <h2>Módulo 5 — Menús (base para el mantenimiento y el juego)</h2>
+      <p>Conceptos: <span class="badge">choice</span> <span class="badge">errorlevel</span> <span
+          class="badge">goto</span></p>
+      <pre><code>@echo off
+:menu
+cls
+echo 1) Opcion A
+echo 2) Opcion B
+echo 3) Salir
+choice /c 123 /n /m "Elige: "
+if errorlevel 3 goto fin
+if errorlevel 2 goto b
+if errorlevel 1 goto a
+
+:a
+echo Elegiste A
+pause
+goto menu
+
+:b
+echo Elegiste B
+pause
+goto menu
+
+:fin
+echo Adios
+pause</code></pre>
+      <div class="actions">
+        <a class="btn primary" href="assets/batch/05-menus.bat" download>Descargar ejemplo</a>
+        <a class="btn" href="descargas.html">Ver programas reales (mantenimiento/juego)</a>
+      </div>
+    </section>
+    
+
+    <section class="section">
+      <h2>Cómo ampliar este curso</h2>
+      <p>
+        Duplica un bloque “Módulo” y crea otro .BAT en <b>assets/batch/</b>. Así podéis meter “Curso 2: Batch avanzado”
+        o “Curso: Automatización de carpetas” sin romper nada.
+      </p>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> Cosmos Informático</div>
+    </footer>
+  </main>
+
+  <script src="js/universe.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- robotto -->
+
+  <div class="astrobot" id="astrobot" aria-live="polite">
+    <div class="bot" id="astrobotAvatar" title="AstroBot (clic para ocultar/mostrar)">
+      <img src="assets/robot/astrobot.png" alt="AstroBot" onerror="this.style.display='none'">
+    </div>
+
+    <div class="bubble">
+      <div class="top">
+        <div class="title">AstroBot · Guía de AstroCode</div>
+        <div class="controls">
+          <button class="mini" id="astroPrev" type="button">◀</button>
+          <button class="mini" id="astroNext" type="button">▶</button>
+          <button class="mini" id="astroClose" type="button">✕</button>
+        </div>
+      </div>
+      <div class="body" id="astroText">
+        <!-- Texto dinámico -->
+      </div>
+    </div>
+  </div>
+
+  <script src="js/astrobot.js"></script>
+
+</body>
+
+</html>

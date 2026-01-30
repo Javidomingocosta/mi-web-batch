@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>¿Qué es un Sistema Operativo? — Batch Nebula</title>
+  <link rel="icon" href="assets/robot/iconastrobot.png" type="image/png">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <canvas id="universe" aria-hidden="true"></canvas>
+  <div class="backdrop" aria-hidden="true"></div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <div class="logo">
+          <img src="assets/robot/iconastrobot.png" alt="AstroBot" />
+        </div>
+        <span>Cosmos Informático</span>
+      </a>
+      <nav class="navlinks">
+        <a href="so.html">¿Qué es un SO?</a>
+        <a href="msdos.html">Historia MS-DOS</a>
+        <a href="curso-batch.html">Curso Batch</a>
+        <a href="descargas.html">Descargas</a>
+        <a href="juego.html">Juego</a>
+        <a href="certificado.html">Reto & Certificado</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>¿Qué es un <span style="text-shadow:0 0 24px rgba(140,180,255,.18)">Sistema Operativo</span>?</h1>
+      <p class="lead">
+        Un sistema operativo (SO) es el “controlador central” que gestiona recursos (CPU, memoria, disco, periféricos)
+        y ofrece servicios para que las aplicaciones funcionen. Es la interfaz real entre <b>hardware</b> y <b>software</b>.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>¿Qué hace exactamente?</h2>
+      <div class="grid">
+        <article class="card"><div class="inner">
+          <h3>Gestión de procesos</h3>
+          <p>Decide qué programa usa la CPU, cuándo y cuánto tiempo (planificación).</p>
+        </div></article>
+        <article class="card"><div class="inner">
+          <h3>Gestión de memoria</h3>
+          <p>Asigna RAM, evita choques entre programas y usa memoria virtual si hace falta.</p>
+        </div></article>
+        <article class="card"><div class="inner">
+          <h3>Sistema de archivos</h3>
+          <p>Organiza datos en carpetas/archivos y controla permisos, rutas y operaciones de lectura/escritura.</p>
+        </div></article>
+        <article class="card"><div class="inner">
+          <h3>Control de dispositivos</h3>
+          <p>Habla con teclado, pantalla, impresora, red… mediante controladores (drivers).</p>
+        </div></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Viaje rápido en el tiempo (timeline)</h2>
+      <p>Una línea temporal simplificada para ubicar cómo llegamos a sistemas modernos:</p>
+
+      <div class="timeline">
+        <div class="t-item">
+          <div class="date">Años 50–60 · Mainframes</div>
+          <h3>Procesamiento por lotes</h3>
+          <p>Trabajos “en cola”: se ejecutan uno detrás de otro. La interacción era mínima.</p>
+        </div>
+        <div class="t-item">
+          <div class="date">Años 70 · Multiusuario</div>
+          <h3>Tiempo compartido</h3>
+          <p>Varios usuarios usan el mismo sistema a la vez. Terminales, cuentas, permisos.</p>
+        </div>
+        <div class="t-item">
+          <div class="date">Años 80 · PC</div>
+          <h3>SO para ordenadores personales</h3>
+          <p>Arranca la era del PC: sistemas más simples, orientados a un usuario y hardware limitado.</p>
+        </div>
+        <div class="t-item">
+          <div class="date">Años 90–hoy</div>
+          <h3>Interfaces gráficas + redes</h3>
+          <p>GUI, multitarea real, controladores complejos, internet, seguridad y actualizaciones constantes.</p>
+        </div>
+      </div>
+
+      <div class="actions" style="margin-top:14px">
+        <a class="btn primary" href="msdos.html">Siguiente: ¿de dónde viene MS-DOS?</a>
+        <a class="btn" href="index.html">Volver al inicio</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> Cosmos Informático</div>
+    </footer>
+  </main>
+
+  <script src="js/universe.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

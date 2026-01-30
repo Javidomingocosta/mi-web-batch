@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reto & Certificado — Batch Nebula</title>
+  <link rel="icon" href="assets/robot/iconastrobot.png" type="image/png">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <canvas id="universe" aria-hidden="true"></canvas>
+  <div class="backdrop" aria-hidden="true"></div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <div class="logo">
+          <img src="assets/robot/iconastrobot.png" alt="AstroBot" />
+        </div>
+        <span>Cosmos Informático</span>
+      </a>
+      <nav class="navlinks">
+        <a href="so.html">¿Qué es un SO?</a>
+        <a href="msdos.html">Historia MS-DOS</a>
+        <a href="curso-batch.html">Curso Batch</a>
+        <a href="descargas.html">Descargas</a>
+        <a href="juego.html">Juego</a>
+        <a href="certificado.html">Reto & Certificado</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Reto final y certificado</h1>
+      <p class="lead">
+        Completa el test rápido de Batch. Si apruebas, se genera un certificado imprimible.
+        (Consejo: repasa Módulos 2–5 del curso.)
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Test</h2>
+      <form class="form" id="quizForm">
+        <div>
+          <label class="small" for="name">Tu nombre (para el certificado)</label>
+          <input id="name" name="name" type="text" placeholder="Ej: Alex Martínez" />
+        </div>
+
+        <div class="q">
+          <h3>1) ¿Qué ejecuta normalmente los .BAT en Windows?</h3>
+          <label><input type="radio" name="q1" value="a"> powershell.exe</label>
+          <label><input type="radio" name="q1" value="b"> cmd.exe</label>
+          <label><input type="radio" name="q1" value="c"> explorer.exe</label>
+        </div>
+
+        <div class="q">
+          <h3>2) ¿Cómo asignas una variable en Batch?</h3>
+          <label><input type="radio" name="q2" value="a"> set variable=valor</label>
+          <label><input type="radio" name="q2" value="b"> let variable=valor</label>
+          <label><input type="radio" name="q2" value="c"> var variable=valor</label>
+        </div>
+
+        <div class="q">
+          <h3>3) ¿Qué condición comprueba si existe un archivo?</h3>
+          <label><input type="radio" name="q3" value="a"> if file</label>
+          <label><input type="radio" name="q3" value="b"> if has</label>
+          <label><input type="radio" name="q3" value="c"> if exist</label>
+        </div>
+
+        <div class="q">
+          <h3>4) ¿Qué estructura se usa típicamente para recorrer elementos?</h3>
+          <label><input type="radio" name="q4" value="a"> loop ... end</label>
+          <label><input type="radio" name="q4" value="b"> for %%i in (...) do ...</label>
+          <label><input type="radio" name="q4" value="c"> foreach (...) { ... }</label>
+        </div>
+
+        <div class="q">
+          <h3>5) ¿Para qué sirve “@echo off”?</h3>
+          <label><input type="radio" name="q5" value="a"> Oculta la impresión de comandos</label>
+          <label><input type="radio" name="q5" value="b"> Borra variables</label>
+          <label><input type="radio" name="q5" value="c"> Apaga el PC</label>
+        </div>
+
+        <button class="btn primary" type="submit">Corregir</button>
+        <div id="result" class="small"></div>
+      </form>
+    </section>
+
+    <section class="section">
+      <h2>Certificado</h2>
+      <div class="sheet">
+        <div class="cert">
+          <div class="small">Se certifica que</div>
+          <div class="name" id="certName">—</div>
+          <div class="small" style="margin-top:8px">
+            ha completado con éxito el reto de fundamentos de Batch en <b>Batch Nebula</b>.
+          </div>
+          <div class="small" style="margin-top:10px">Fecha: <span id="certDate">—</span></div>
+          <div class="small" style="margin-top:10px; opacity:.8">
+            (Imprimible desde el navegador)
+          </div>
+        </div>
+
+        <div class="actions" style="margin-top:12px">
+          <button class="btn" id="printBtn" type="button" disabled style="opacity:.5">Imprimir certificado</button>
+          <a class="btn" href="curso-batch.html">Volver al curso</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> Cosmos Informático</div>
+    </footer>
+  </main>
+
+  <script src="js/universe.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>
