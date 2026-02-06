@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ASTROCODE — Scanner (SFC)</title>
+  <link rel="icon" href="assets/robot/iconastrobot.png" type="image/png">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <canvas id="universe" aria-hidden="true"></canvas>
+  <div class="backdrop" aria-hidden="true"></div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <div class="logo">
+          <img src="assets/robot/iconastrobot.png" alt="AstroBot" onerror="this.style.display='none'">
+        </div>
+        <span>ASTROCODE</span>
+      </a>
+      <nav class="navlinks" aria-label="Navegación">
+        <a href="so.html">Historia SO</a>
+        <a href="msdos.html">Historia MS-DOS</a>
+        <a href="curso-batch.html">Curso Batch</a>
+        <a href="mantenimiento.html">Mantenimiento PC</a>
+        <a href="descargas.html">Descargas</a>
+        <a href="certificado.html">Reto & Diploma</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="kicker"><span class="dot"></span> Diagnóstico · Archivos del sistema</div>
+      <h1>Scanner.bat (SFC: verificar y reparar)</h1>
+      <p class="lead">
+        El Scanner es un submenú que ejecuta <b>SFC</b> (System File Checker). Sirve para comprobar si Windows tiene archivos dañados
+        y, si hace falta, intentar repararlos.
+      </p>
+
+      <div class="actions" style="margin-top:16px">
+        <a class="btn primary" href="assets/downloads/Scanner.bat" download>⬇ Descargar Scanner.bat</a>
+        <a class="btn" href="mantenimiento.html">Volver a Mantenimiento</a>
+      </div>
+
+      <p class="small" style="margin-top:10px">
+        Recomendación: ejecutar la consola como administrador para evitar errores de permisos.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Qué hace cada opción</h2>
+      <div class="timeline">
+        <div class="t-item">
+          <div class="date">1 · Verificar</div>
+          <h3>Comprobar sin reparar</h3>
+          <p>Comando: <code>sfc /VERIFYONLY</code>. Revisa integridad de archivos protegidos del sistema sin hacer cambios.</p>
+        </div>
+
+        <div class="t-item">
+          <div class="date">2 · Reparar</div>
+          <h3>Comprobar y reparar</h3>
+          <p>Comando: <code>sfc /SCANNOW</code>. Puede tardar bastante. Intenta reemplazar archivos dañados.</p>
+        </div>
+
+        <div class="t-item">
+          <div class="date">3 · Volver</div>
+          <h3>Salir del Scanner</h3>
+          <p>
+            El script termina con <code>exit /b</code> para volver al mantenimiento (si fue abierto con <code>call Scanner.bat</code>).
+            Así cumple “se abre y vuelve bien”.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Integración correcta con el mantenimiento</h2>
+      <p>Para que el flujo sea limpio:</p>
+      <pre><code>:: En MantenimientoV.2.bat
+:abrir_scanner
+call Scanner.bat
+goto inicio
+
+:: En Scanner.bat (al salir)
+exit /b</code></pre>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> ASTROCODE</div>
+    </footer>
+  </main>
+
+  <script src="js/universe.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

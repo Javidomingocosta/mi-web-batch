@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Curso Batch — Batch Nebula</title>
+  <title>Curso Batch — ASTROCODE</title>
   <link rel="icon" href="assets/robot/iconastrobot.png" type="image/png">
   <link rel="stylesheet" href="css/styles.css" />
 </head>
@@ -19,15 +19,15 @@
         <div class="logo">
           <img src="assets/robot/iconastrobot.png" alt="AstroBot" />
         </div>
-        <span>Cosmos Informático</span>
+        <span>ASTROCODE</span>
       </a>
-      <nav class="navlinks">
-        <a href="so.html">¿Qué es un SO?</a>
+            <nav class="navlinks" aria-label="Navegación">
+        <a href="so.html">Historia SO</a>
         <a href="msdos.html">Historia MS-DOS</a>
         <a href="curso-batch.html">Curso Batch</a>
+        <a href="mantenimiento.html">Mantenimiento PC</a>
         <a href="descargas.html">Descargas</a>
-        <a href="juego.html">Juego</a>
-        <a href="certificado.html">Reto & Certificado</a>
+        <a href="certificado.html">Reto & Diploma</a>
       </nav>
     </div>
   </header>
@@ -41,12 +41,42 @@
       </p>
     </section>
 
+    <section class="section">
+      <h2>Historia rápida: de MS-DOS a Batch</h2>
+      <p>
+        Los <b>archivos .BAT</b> nacen como guiones de comandos en la era DOS: una forma de automatizar tareas
+        repetitivas (copias, menús, configuraciones). Hoy siguen funcionando en Windows a través de <b>cmd.exe</b>.
+      </p>
+
+      <div class="timeline">
+        <div class="t-item">
+          <div class="date">Años 80</div>
+          <h3>MS-DOS y el intérprete de comandos</h3>
+          <p>Comandos como <b>DIR</b>, <b>CD</b>, <b>COPY</b>. Los .BAT encadenan comandos como si fuera una receta.</p>
+        </div>
+        <div class="t-item">
+          <div class="date">Años 90–2000</div>
+          <h3>Windows mantiene compatibilidad</h3>
+          <p>Batch sigue disponible para administración básica y scripts rápidos.</p>
+        </div>
+        <div class="t-item">
+          <div class="date">Hoy</div>
+          <h3>Automatización ligera</h3>
+          <p>Ideal para menús, mantenimiento escolar, lanzadores y tareas simples. Para cosas avanzadas existe PowerShell, pero Batch sigue siendo rápido y universal en Windows.</p>
+        </div>
+      </div>
+
+      <p class="small" style="margin-top:10px">
+        Consejo: crea una carpeta “PruebasBatch” y ejecuta ahí tus scripts para no borrar archivos por error.
+      </p>
+    </section>
+
     <section class="section" id="modulo-hola">
       <h2>Módulo 1 — Hola Mundo y estructura</h2>
       <p>Conceptos: <span class="badge">@echo off</span> <span class="badge">echo</span> <span
           class="badge">pause</span></p>
       <pre><code>@echo off
-title Batch Nebula - Hola Mundo
+title ASTROCODE - Hola Mundo
 echo Hola, universo.
 pause</code></pre>
       <div class="actions">
@@ -131,16 +161,10 @@ pause</code></pre>
     </section>
     
 
-    <section class="section">
-      <h2>Cómo ampliar este curso</h2>
-      <p>
-        Duplica un bloque “Módulo” y crea otro .BAT en <b>assets/batch/</b>. Así podéis meter “Curso 2: Batch avanzado”
-        o “Curso: Automatización de carpetas” sin romper nada.
-      </p>
-    </section>
+    
 
     <footer class="footer">
-      <div>© <span id="year"></span> Cosmos Informático</div>
+      <div>© <span id="year"></span> ASTROCODE</div>
     </footer>
   </main>
 

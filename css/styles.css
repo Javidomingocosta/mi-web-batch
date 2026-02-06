@@ -93,8 +93,8 @@ header{
 }
 
 .logo img{
-  width:125%;
-  height:125%;
+  width:90%;
+  height:90%;
   object-fit:contain;
   filter: drop-shadow(0 0 6px rgba(140,180,255,.45));
 }

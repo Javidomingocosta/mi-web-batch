@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ASTROCODE — Aprender haciendo: Mantenimiento PC</title>
+  <link rel="icon" href="assets/robot/iconastrobot.png" type="image/png">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <canvas id="universe" aria-hidden="true"></canvas>
+  <div class="backdrop" aria-hidden="true"></div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <div class="logo">
+          <img src="assets/robot/iconastrobot.png" alt="AstroBot" onerror="this.style.display='none'">
+        </div>
+        <span>ASTROCODE</span>
+      </a>
+      <nav class="navlinks" aria-label="Navegación">
+        <a href="so.html">Historia SO</a>
+        <a href="msdos.html">Historia MS-DOS</a>
+        <a href="curso-batch.html">Curso Batch</a>
+        <a href="mantenimiento.html">Mantenimiento PC</a>
+        <a href="descargas.html">Descargas</a>
+        <a href="certificado.html">Reto & Diploma</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="kicker"><span class="dot"></span> Aprender haciendo · Batch aplicado</div>
+      <h1>Mantenimiento del PC (MantenimientoV.2.bat)</h1>
+      <p class="lead">
+        Este apartado explica <b>qué hace cada opción</b> del menú, <b>qué herramientas usa Windows</b> y
+        cómo está construido el script por dentro (menú + validación + módulos). También incluye mejoras
+        de nota excelente: <b>logs</b> y <b>Netstat</b>.
+      </p>
+
+      <div class="actions" style="margin-top:16px">
+        <a class="btn primary" href="assets/downloads/MantenimientoV.2.bat" download>⬇ Descargar MantenimientoV.2.bat</a>
+        <a class="btn" href="scanner.html">Ver Scanner (SFC)</a>
+        <a class="btn" href="#opciones">Opciones explicadas</a>
+        <a class="btn" href="#construccion">Cómo se construye</a>
+      </div>
+
+      <p class="small" style="margin-top:10px">
+        Nota: algunas opciones pueden requerir permisos de administrador (por ejemplo CHKDSK /F /R y vaciar $Recycle.Bin).
+      </p>
+    </section>
+
+    <section class="section" id="opciones">
+      <h2>Opciones del menú: herramientas y propósito</h2>
+      <p>
+        El mantenimiento está organizado en un menú: el usuario elige una opción, se ejecuta un bloque de comandos
+        y se vuelve al menú. Esto se logra con <b>etiquetas</b> (<code>:nombre</code>) y saltos con <b>goto</b>.
+      </p>
+
+      <div class="timeline">
+        <div class="t-item">
+          <div class="date">1 · Limpieza</div>
+          <h3>Limpiar archivos temporales</h3>
+          <p>
+            Usa <code>cleanmgr /sagerun:1</code> (Liberador de espacio). Sirve para borrar temporales, cachés y otros restos.
+            Si en el PC no existe la configuración <code>/sageset:1</code>, se debe configurar una vez.
+          </p>
+        </div>
+
+        <div class="t-item">
+          <div class="date">2 · Red</div>
+          <h3>Liberar caché DNS</h3>
+          <p>
+            Ejecuta <code>ipconfig /flushdns</code>. Útil si hay problemas al acceder a webs, cambios de DNS o errores de resolución.
+          </p>
+        </div>
+
+        <div class="t-item">
+          <div class="date">3 · Disco</div>
+          <h3>Desfragmentar disco duro</h3>
+          <p>
+            Pide confirmación y ejecuta <code>defrag C:</code>. Recomendado en HDD (disco mecánico). En SSD se suele “optimizar” de otra forma.
+          </p>
+        </div>
+
+        <div class="t-item">
+          <div class="date">4 · Informe</div>
+          <h3>Generar informe del sistema</h3>
+          <p>
+            Ejecuta <code>systeminfo</code> y lo guarda en <code>C:\informe_sistema.txt</code>.
+            <br>Mejora implementada: además se guarda un informe de conexiones con <code>netstat -ano</code> en <code>C:\netstat_conexiones.txt</code>.
+          </p>
+        </div>
+
+        <div class="t-item">
+          <div class="date">5 · Seguridad</div>
+          <h3>Buscar y eliminar malware</h3>
+          <p>
+            Lanza Windows Defender (si está disponible) usando <code>MpCmdRun.exe</code> para un escaneo completo y guarda salida en un .txt temporal.
+          </p>
+        </div>
+
+        <div class="t-item">
+          <div class="date">6 · Papelera</div>
+          <h3>Vaciar la papelera</h3>
+          <p>
+            Ejecuta <code>rd /s /q %systemdrive%\$Recycle.Bin</code>. Puede requerir permisos admin.
+          </p>
+        </div>
+
+        <div class="t-item">
+          <div class="date">7 · Backup</div>
+          <h3>Copia de seguridad</h3>
+          <p>
+            Pide origen y destino y copia con <code>xcopy</code> (incluye subcarpetas, ocultos y continúa con errores).
+            Importante: se usan comillas para rutas con espacios.
+          </p>
+        </div>
+
+        <div class="t-item">
+          <div class="date">8 · Reparación</div>
+          <h3>Reparar disco (CHKDSK)</h3>
+          <p>
+            Pide la letra de unidad y ejecuta <code>chkdsk X: /F /R</code>.
+            <b>/F</b> repara errores y <b>/R</b> busca sectores defectuosos. En la unidad del sistema puede pedir reinicio.
+          </p>
+        </div>
+
+        <div class="t-item">
+          <div class="date">9 · Scanner</div>
+          <h3>Abrir Scanner (SFC)</h3>
+          <p>
+            Ejecuta <code>call Scanner.bat</code> para abrir el submenú de verificación/reparación de archivos del sistema y luego vuelve al menú.
+          </p>
+          <div class="actions" style="margin-top:10px">
+            <a class="btn" href="scanner.html">Abrir explicación de Scanner</a>
+            <a class="btn primary" href="assets/downloads/Scanner.bat" download>⬇ Descargar Scanner.bat</a>
+          </div>
+        </div>
+
+        <div class="t-item">
+          <div class="date">10 · Salida</div>
+          <h3>Salir</h3>
+          <p>Finaliza el script de forma limpia.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="construccion">
+      <h2>Cómo se construye (guía por partes)</h2>
+      <p>
+        Un mantenimiento en Batch suele dividirse en 3 capas: <b>menú</b> → <b>validación</b> → <b>módulos</b>.
+        Así controlas bien las opciones y evitas que el usuario rompa el flujo.
+      </p>
+
+      <div class="grid">
+        <article class="card"><div class="inner">
+          <h3>1) Menú + lectura de opción</h3>
+          <pre><code>:inicio
+cls
+echo 1) ...
+echo 2) ...
+set /p opcion="Selecciona (1-10): "</code></pre>
+        </div></article>
+
+        <article class="card"><div class="inner">
+          <h3>2) Validación y saltos</h3>
+          <pre><code>if "%opcion%"=="1" goto limpiar_temporales
+...
+if "%opcion%"=="10" goto exit
+echo Opción inválida
+pause
+goto inicio</code></pre>
+        </div></article>
+
+        <article class="card"><div class="inner">
+          <h3>3) Módulo (una opción)</h3>
+          <pre><code>:liberar_dns
+ipconfig /flushdns
+pause
+goto inicio</code></pre>
+        </div></article>
+
+        <article class="card"><div class="inner">
+          <h3>4) Modularidad con CALL</h3>
+          <p>
+            Para scripts grandes, separa en sub-scripts y llama con <code>call</code>.
+            Ejemplo: <code>call Scanner.bat</code> (Scanner se ejecuta y devuelve control al mantenimiento).
+          </p>
+        </div></article>
+      </div>
+    </section>
+
+    <section class="section" id="excelente">
+      <h2>Mejoras implementadas para nota excelente</h2>
+      <div class="grid">
+        <article class="card"><div class="inner">
+          <h3>Logs automáticos</h3>
+          <p>
+            El mantenimiento guarda un log en <code>%temp%\astrocode_mantenimiento.log</code> con fecha/hora y acción realizada.
+            Esto demuestra trazabilidad y “control de resultados”.
+          </p>
+        </div></article>
+
+        <article class="card"><div class="inner">
+          <h3>Netstat (conexiones)</h3>
+          <p>
+            Además del informe del sistema, se genera <code>C:\netstat_conexiones.txt</code> con <code>netstat -ano</code>
+            para inspección de conexiones y PIDs (muy útil para diagnóstico).
+          </p>
+        </div></article>
+
+        <article class="card"><div class="inner">
+          <h3>Mejor validación</h3>
+          <p>
+            Si el usuario escribe algo fuera de 1–10, el script muestra “opción inválida” y vuelve al menú.
+          </p>
+        </div></article>
+
+        <article class="card"><div class="inner">
+          <h3>Scanner vuelve bien</h3>
+          <p>
+            Scanner termina con <code>exit /b</code> y el mantenimiento lo llama con <code>call</code>, por lo que abre y vuelve sin duplicar menús.
+          </p>
+        </div></article>
+      </div>
+    </section>
+
+    <section class="section" id="bat2exe">
+      <h2>Extra web: convertir BAT a EXE (pasos)</h2>
+      <p>
+        Para presentar el proyecto de forma “app”, se puede empaquetar el BAT como EXE con un conversor (por ejemplo “Bat to Exe Converter”).
+        Pasos típicos:
+      </p>
+      <ol>
+        <li>Seleccionar el archivo <b>MantenimientoV.2.bat</b>.</li>
+        <li>Elegir un icono (por ejemplo el robot).</li>
+        <li>Configurar si se muestra consola o modo silencioso.</li>
+        <li>Generar el EXE y probarlo en otro PC.</li>
+      </ol>
+      <p class="small">Nota: muchos conversores “empaquetan” el BAT dentro de un ejecutor; no lo convierten a código nativo.</p>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> ASTROCODE</div>
+    </footer>
+  </main>
+
+  <script src="js/universe.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

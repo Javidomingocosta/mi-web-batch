@@ -1,18 +1,12 @@
 <!doctype html>
 <html lang="es">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cosmos Informático</title>
-
+  <title>ASTROCODE — Informática en modo universo</title>
   <link rel="icon" href="assets/robot/iconastrobot.png" type="image/png">
-
   <link rel="stylesheet" href="css/styles.css" />
-
-
 </head>
-
 <body>
   <canvas id="universe" aria-hidden="true"></canvas>
   <div class="backdrop" aria-hidden="true"></div>
@@ -21,87 +15,95 @@
     <div class="container nav">
       <a class="brand" href="index.html">
         <div class="logo">
-          <img src="assets/robot/iconastrobot.png" alt="AstroBot" />
+          <img src="assets/robot/iconastrobot.png" alt="AstroBot" onerror="this.style.display='none'">
         </div>
-        <span>Cosmos Informático</span>
+        <span>ASTROCODE</span>
       </a>
       <nav class="navlinks" aria-label="Navegación">
-        <a href="so.html">¿Qué es un SO?</a>
+        <a href="so.html">Historia SO</a>
         <a href="msdos.html">Historia MS-DOS</a>
         <a href="curso-batch.html">Curso Batch</a>
+        <a href="mantenimiento.html">Mantenimiento PC</a>
+        <a href="scanner.html">Scanner (SFC)</a>
         <a href="descargas.html">Descargas</a>
-        <a href="juego.html">Juego</a>
-        <a href="certificado.html">Reto & Certificado</a>
+        <a href="certificado.html">Reto & Diploma</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
     <section class="hero">
-      <h1>Del origen del SO a tu primer <span style="text-shadow:0 0 24px rgba(255,120,220,.18)">script Batch</span>.
-      </h1>
+      <div class="kicker"><span class="dot"></span> 2º Trimestre · Web pública · Batch & mantenimiento</div>
+      <h1>Aprende informática como si exploraras el <span style="text-shadow:0 0 24px rgba(140,180,255,.18)">universo</span>.</h1>
       <p class="lead">
-        Esta web es un “mini-observatorio” para entender <b>sistemas operativos</b>, descubrir de dónde sale
-        <b>MS-DOS</b>
-        y aprender <b>Batch</b> con ejemplos descargables. Al final hay un reto: si lo superas, te llevas un certificado
-        imprimible.
+        ASTROCODE reúne historia de sistemas operativos, un mini-curso guiado de Batch y un proyecto real:
+        un <b>mantenimiento del PC</b> con menú (MantenimientoV.2) + un <b>Scanner SFC</b>.
+        Al final puedes hacer un reto y sacar un diploma imprimible.
       </p>
 
       <div class="grid">
         <article class="card">
           <div class="inner">
-            <h3>1) Fundamentos: Sistema Operativo</h3>
-            <p>Qué es, para qué sirve, y cómo hace de puente entre hardware, programas y usuario. En formato visual.</p>
+            <h3>Historia de los Sistemas Operativos</h3>
+            <p>Qué es un SO, cómo evolucionó, y por qué MS‑DOS fue clave para Batch.</p>
             <div class="actions">
-              <a class="btn primary" href="so.html">Entrar</a>
-              <a class="btn" href="msdos.html">Ver la historia de MS-DOS</a>
+              <a class="btn primary" href="so.html">Ver Historia SO</a>
+              <a class="btn" href="msdos.html">Ir a MS‑DOS</a>
             </div>
           </div>
         </article>
 
         <article class="card">
           <div class="inner">
-            <h3>2) Mini-curso de Batch</h3>
-            <p>Desde el “Hola Mundo” a menús y bucles. Ejemplos cortos, claros y descargables para practicar.</p>
+            <h3>Mini‑curso guiado: Fundamentos Batch</h3>
+            <p>Sintaxis básica con ejemplos descargables: variables, IF, FOR, menús…</p>
             <div class="actions">
               <a class="btn primary" href="curso-batch.html">Hacer el curso</a>
-              <a class="btn" href="certificado.html">Ir al reto final</a>
+              <a class="btn" href="certificado.html">Ir al reto</a>
             </div>
           </div>
         </article>
 
         <article class="card">
           <div class="inner">
-            <h3>3) Descarga: Mantenimiento del PC</h3>
-            <p>Un .BAT de mantenimiento “seguro” (limpieza ligera + diagnóstico básico). Base para ampliarlo como
-              equipo.</p>
+            <h3>Aprender haciendo: Mantenimiento PC</h3>
+            <p>Explicación de herramientas, qué hace cada opción y guía de construcción paso a paso.</p>
             <div class="actions">
-              <a class="btn primary" href="descargas.html">Descargar</a>
-              <a class="btn" href="curso-batch.html#modulo-menus">Ver cómo se hizo</a>
+              <a class="btn primary" href="mantenimiento.html">Entrar</a>
+              <a class="btn" href="assets/downloads/MantenimientoV.2.bat" download>Descargar .BAT</a>
             </div>
           </div>
         </article>
 
         <article class="card">
           <div class="inner">
-            <h3>4) Juego en Batch</h3>
-            <p>Mini-aventura de consola con elecciones. Ideal para practicar variables, IF y menús.</p>
+            <h3>Scanner (SFC): verificar / reparar</h3>
+            <p>Menú propio para ejecutar SFC y volver correctamente al mantenimiento.</p>
             <div class="actions">
-              <a class="btn primary" href="juego.html">Jugar / Descargar</a>
-              <a class="btn" href="curso-batch.html#modulo-if">Repasar IF</a>
+              <a class="btn primary" href="scanner.html">Ver explicación</a>
+              <a class="btn" href="assets/downloads/Scanner.bat" download>Descargar Scanner</a>
             </div>
           </div>
         </article>
       </div>
     </section>
 
+    <section class="section">
+      <h2>Descargas rápidas</h2>
+      <p>Todo lo importante está enlazado de forma visible para cumplir la rúbrica.</p>
+      <div class="actions" style="margin-top:12px">
+        <a class="btn primary" href="assets/downloads/MantenimientoV.2.bat" download>⬇ MantenimientoV.2.bat</a>
+        <a class="btn primary" href="assets/downloads/Scanner.bat" download>⬇ Scanner.bat</a>
+        <a class="btn" href="descargas.html">Ver todas las descargas</a>
+      </div>
+    </section>
+
     <footer class="footer">
-      <div>© <span id="year"></span> Cosmos Informático</div>
+      <div>© <span id="year"></span> ASTROCODE</div>
     </footer>
   </main>
 
   <script src="js/universe.js"></script>
   <script src="js/main.js"></script>
 </body>
-
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Descargas — Batch Nebula</title>
+  <title>Descargas — ASTROCODE</title>
   <link rel="icon" href="assets/robot/iconastrobot.png" type="image/png">
   <link rel="stylesheet" href="css/styles.css" />
 </head>
@@ -17,25 +17,29 @@
         <div class="logo">
           <img src="assets/robot/iconastrobot.png" alt="AstroBot" />
         </div>
-        <span>Cosmos Informático</span>
+        <span>ASTROCODE</span>
       </a>
-      <nav class="navlinks">
-        <a href="so.html">¿Qué es un SO?</a>
+      <nav class="navlinks" aria-label="Navegación">
+        <a href="so.html">Historia SO</a>
         <a href="msdos.html">Historia MS-DOS</a>
         <a href="curso-batch.html">Curso Batch</a>
+        <a href="mantenimiento.html">Mantenimiento PC</a>
         <a href="descargas.html">Descargas</a>
-        <a href="juego.html">Juego</a>
-        <a href="certificado.html">Reto & Certificado</a>
+        <a href="certificado.html">Reto & Diploma</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
     <section class="hero">
-      <h1>Programas en Batch</h1>
+      <h1>Descargas</h1>
       <p class="lead">
-        Aquí están los .BAT principales del proyecto. Son base escolar: seguros, claros y fáciles de ampliar.
+        Aquí tienes los scripts principales del proyecto. En esta plantilla ya están los enlaces listos.
+        <b>Tú solo tienes que reemplazar los .BAT</b> en <b>assets/downloads/</b> por los tuyos reales.
       </p>
+      <div class="actions" style="margin-top:12px">
+        <a class="btn" href="mantenimiento.html">Ver guía de Mantenimiento PC</a>
+      </div>
     </section>
 
     <section class="section">
@@ -44,31 +48,36 @@
         <thead>
           <tr>
             <th>Archivo</th>
-            <th>Qué hace</th>
+            <th>Qué es</th>
             <th>Descarga</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><b>Mantenimiento PC</b><br><span class="badge">mantenimiento-pc.bat</span></td>
-            <td>Limpieza ligera (temporales del usuario), info del sistema y comprobaciones básicas.</td>
-            <td><a class="btn primary" href="assets/downloads/mantenimiento-pc.bat" download>Descargar</a></td>
+            <td><b>MantenimientoV.2.bat</b><br><span class="badge">menú principal</span></td>
+            <td>Programa de mantenimiento con opciones: limpieza, DNS, defrag, informe (systeminfo + netstat), Defender, papelera, backup, CHKDSK y Scanner.</td>
+            <td><a class="btn primary" href="assets/downloads/MantenimientoV.2.bat" download>Descargar</a></td>
           </tr>
           <tr>
-            <td><b>Juego</b><br><span class="badge">juego-galaxia.bat</span></td>
-            <td>Aventura corta tipo “elige tu ruta”. Ideal para practicar variables + IF + menús.</td>
-            <td><a class="btn primary" href="assets/downloads/juego-galaxia.bat" download>Descargar</a></td>
+            <td><b>Scanner.bat</b><br><span class="badge">SFC</span></td>
+            <td>Submenú de verificación/reparación con <code>sfc /VERIFYONLY</code> y <code>sfc /SCANNOW</code>. Diseñado para volver al mantenimiento.</td>
+            <td><a class="btn primary" href="assets/downloads/Scanner.bat" download>Descargar</a></td>
+          </tr>
+          <tr>
+            <td><b>Ejemplos del curso</b><br><span class="badge">assets/batch/</span></td>
+            <td>Ejemplos cortos del mini-curso (Hola Mundo, variables, IF, FOR, menús).</td>
+            <td><a class="btn" href="curso-batch.html">Ir al curso</a></td>
           </tr>
         </tbody>
       </table>
 
       <p class="small" style="margin-top:12px">
-        Consejo: ejecuta los .BAT con doble click o desde cmd. Si Windows avisa, revisa el código (es normal en scripts).
+        Nota: si el navegador abre el .BAT en vez de descargarlo, botón derecho → “Guardar enlace como…”.
       </p>
     </section>
 
     <footer class="footer">
-      <div>© <span id="year"></span> Cosmos Informático</div>
+      <div>© <span id="year"></span> ASTROCODE</div>
     </footer>
   </main>
 

@@ -16,6 +16,12 @@
       "Misión: descarga el ejemplo del Módulo 2 y cambia el mensaje final para que te salude por tu nombre.",
       "Si te lías con los menús, ve al <b>Módulo 5</b>: ahí está la plantilla de <code>choice</code> + <code>errorlevel</code>."
     ],
+    "mantenimiento.html": [
+      "Bienvenido al taller de mantenimiento. Vamos a construir un menú por opciones (MantenimientoV.2.bat).",
+      "Regla de seguridad: borra solo temporales del usuario (%TEMP%) y avisa siempre antes de borrar.",
+      "La opción Scanner usa SFC: normalmente requiere abrir CMD como administrador.",
+      "Cuando tengas tu .BAT final, reemplaza los archivos en assets/downloads/ y listo."
+    ],
     "certificado.html": [
       "Última órbita: el reto final. Necesitas 4/5 para generar el certificado.",
       "Si fallas, vuelve al curso y repasa: Variables, IF, FOR y Menús.",
